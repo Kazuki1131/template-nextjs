@@ -4,6 +4,9 @@
 	"parserOptions": { "project": "./tsconfig.json" },
 	"settings": { "tailwindcss": { "groupByResponsive": true } },
 	"plugins": [
+		"sort-keys-custom-order",
+		"unused-imports",
+		"import",
 		"simple-import-sort",
 		"sort-destructure-keys",
 		"tailwindcss",
@@ -17,6 +20,15 @@
 		"prettier"
 	],
 	"rules": {
+		"unused-imports/no-unused-imports": "error",
+		"sort-keys-custom-order/object-keys": [
+			"error",
+			{ "orderedKeys": ["id", "name", "title"] }
+		],
+		"sort-keys-custom-order/type-keys": [
+			"error",
+			{ "orderedKeys": ["id", "name", "title"] }
+		],
 		"curly": "error",
 		"no-console": ["error", { "allow": ["warn", "info", "error"] }],
 		"no-restricted-syntax": [
